@@ -1,0 +1,14 @@
+server:
+  port: 8201
+eureka:
+#  environment: development
+  server:
+    enable-self-preservation: false #是否开启自我保护模式，默认为true。分区故障
+    eviction-interval-timer-in-ms: 30000  #清理无效节点时间默认60*1000
+  client:
+    register-with-eureka: false #是否将自己注册为服务
+    fetch-registry: false #由于注册中心的职责就是维护服务实例，并不需要去检索服务，所以这里也设置为false
+    service-url: 
+      defaultZone: http://192.168.67.44:${server.port}/eureka
+  instance:
+    prefer-ip-address: true
