@@ -13,12 +13,12 @@
   <name>sleuth-test</name>
   <description>sleuth test</description>
   <modules>
-    <module>eureka</module>
-    <module>server1</module>
-    <module>server2</module>
-    <module>server3</module>
-    <module>zipkin</module>
-    <module>gateway</module>
+    <module>sleuth-eureka</module>
+    <module>sleuth-server1</module>
+    <module>sleuth-server2</module>
+    <module>sleuth-zipkin</module>
+    <module>sleuth-gateway</module>
+    <module>sleuth-turbine</module>
   </modules>
   
   <dependencyManagement>
@@ -50,5 +50,17 @@
             </executions>
         </plugin>
     </plugins>
-</build>
+  </build>
+  <profiles>
+  	<profile>
+  		<id>dev</id>
+  		<properties>
+  			<eureka.url>http://192.168.67.44:8201/eureka</eureka.url>
+  			<zipkin.url>http://192.168.67.44:9411</zipkin.url>
+  		</properties>
+  		<activation>
+  			<activeByDefault>true</activeByDefault>
+  		</activation>
+  	</profile>
+  </profiles>
 </project>

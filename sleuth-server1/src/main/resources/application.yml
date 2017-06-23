@@ -1,0 +1,23 @@
+server:
+  port: 8202
+  
+spring:
+  application:
+    name: server1
+  zipkin: 
+    base-url: http://192.168.67.44:9411
+  sleuth: 
+    sampler: 
+      percentage: 0.1f  #数据采集百分比 默认0.1f(10笔采集1笔)
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5  #表示eureka client间隔多久去拉取服务注册信息，默认为30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
+    service-url:
+      defaultZone: http://192.168.67.44:8201/eureka
+    healthCheck:
+      enable: true
+  instance: 
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 90 # 续约更新时间间隔（默认30秒）
+    lease-renewal-interval-in-seconds: 30 # 续约到期时间（默认90秒）
