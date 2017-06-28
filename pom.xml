@@ -19,6 +19,7 @@
     <module>sleuth-zipkin</module>
     <module>sleuth-gateway</module>
     <module>sleuth-turbine</module>
+    <module>sleuth-config</module>
   </modules>
   
   <dependencyManagement>

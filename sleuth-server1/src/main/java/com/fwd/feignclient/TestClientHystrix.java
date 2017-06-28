@@ -10,9 +10,4 @@ public class TestClientHystrix implements TestClient{
 		return "server2 is not available";
 	}
 
-	@Override
-	public String server3() {
-		return "server3 is not available";
-	}
-
 }

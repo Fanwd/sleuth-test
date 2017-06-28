@@ -1,0 +1,16 @@
+server: 
+  port: 8501
+  
+spring: 
+  application: 
+    name: sleuth-config
+  cloud: 
+    config: 
+      server: 
+        git: 
+          uri: https://git.oschina.net/null_383_7345/config-repo
+
+#自定义信息
+info: 
+  name: service-config
+  desc: Spring Cloud Config Server

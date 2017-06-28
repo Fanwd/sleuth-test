@@ -42,8 +42,4 @@ public class TestController {
 		return testClient.server2();
 	}
 	
-	@RequestMapping(value="/s13")
-	public String server13(){
-		return testClient.server3();
-	}
 }

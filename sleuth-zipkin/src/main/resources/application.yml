@@ -2,13 +2,13 @@ server:
   port: 9411
 spring: 
   application: 
-    name: zipkin-server
+    name: sleuth-zipkin
 eureka: 
   client: 
     healthcheck:
       enable: true #开启健康检查
     service-url:
-      defaultZone: http://192.168.67.44:8201/eureka
+      defaultZone: http://192.168.67.59:8201/eureka
   instance:
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
     prefer-ip-address: true
